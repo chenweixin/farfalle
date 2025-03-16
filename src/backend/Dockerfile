@@ -18,7 +18,8 @@ COPY pyproject.toml poetry.lock ./
 
 COPY src/backend/ src/backend/
 
-RUN pip install --no-cache-dir poetry && poetry install
+RUN touch README.md
+RUN pip install --no-cache-dir poetry && poetry install --no-root
 
 EXPOSE 8000
 
